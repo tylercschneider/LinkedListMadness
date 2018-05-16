@@ -62,21 +62,22 @@ class LinkedList {
 	}
 	print() {
 		let node = this.head;
+		console.log('forward print');
 		while(node) {
-			console.log('forward print');
 			console.log(node.value);
-			console.log('');
+
 			node = node.next;
 		}
+		console.log('');
 	}
 	reversePrint() {
 		let node = this.tail;
+		console.log('reverse print');
 		while(node) {
-			console.log('reverse print');
 			console.log(node.value);
-			console.log('');
 			node = node.prev;
 		}
+		console.log('');
 	}
 }
 
