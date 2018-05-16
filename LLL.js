@@ -1,3 +1,5 @@
+/////////////////////////////////////
+// DOUBLE LINKED LIST CLASS w/some management methods
 class LinkedList {
 	constructor() {
 		this.head = null;
@@ -13,7 +15,6 @@ class LinkedList {
 		else {
 			prevNode.prev = node;
 		}
-		
 		this.head = node;
 	}
 	shift() {
@@ -32,34 +33,34 @@ class LinkedList {
 			node = node.next;
 		}
 	}
-	removeAt(index) {
-		let node = this.head;
-		let prevNode = null;
-		for(let i=0; i<index; i++){
-			prevNode = node;
-			currentNode = node.next;
-			if(currentNode===null){
-				console.log("list is shorter than index chosen");
-				break;
-			}
-		}
-	}
-	insertAt(index, item){
-		let currentNode = this.head;
-		let nextNode = currentNode.next
-		let prevNode = null;
+	// removeAt(index) {
+	// 	let node = this.head;
+	// 	let prevNode = null;
+	// 	for(let i=0; i<index; i++){
+	// 		prevNode = node;
+	// 		currentNode = node.next;
+	// 		if(currentNode===null){
+	// 			console.log("list is shorter than index chosen");
+	// 			break;
+	// 		}
+	// 	}
+	// }
+	// insertAt(index, item){
+	// 	let currentNode = this.head;
+	// 	let nextNode = currentNode.next
+	// 	let prevNode = null;
 
-		for(let i=0; i<index; i++) {
-			prevNode = node;
-			store = node.next;
-			node = node.next;
-			if(node===null){
-				console.log("list is shorter than index chosen");
-				break;
-			}
-		}
-		let newNode = new Node(item, node.next, node.prev);
-	}
+	// 	for(let i=0; i<index; i++) {
+	// 		prevNode = node;
+	// 		store = node.next;
+	// 		node = node.next;
+	// 		if(node===null){
+	// 			console.log("list is shorter than index chosen");
+	// 			break;
+	// 		}
+	// 	}
+	// 	let newNode = new Node(item, node.next, node.prev);
+	// }
 	print() {
 		let node = this.head;
 		console.log('forward print');
@@ -110,7 +111,7 @@ list.reversePrint();
 
 
 ///////////////////////////////////////
-// ARRAY PORTION
+// CATALOGING ARRAY VALUES
 let bigA = [2,8,5,8,3,5,2,0,8,6,2,5,1,7,0];
 
 function countWithArray(array) {
