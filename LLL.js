@@ -5,15 +5,13 @@ class LinkedList {
 	}
 	unshift(item) {
 		let prevNode = this.head;
-		console.log(prevNode);
 		let node = new Node(item, this.head);
-		//console.log(prevNode);
+
 		if(this.tail === null) {
 			this.tail = node;
 		}
 		else {
 			prevNode.prev = node;
-			console.log(prevNode.prev);
 		}
 		
 		this.head = node;
@@ -22,12 +20,18 @@ class LinkedList {
 		let currentNode = this.head;
 		this.head = currentNode.next;
 	}
-	// removeAll(item) {
-	// 	while(this.head) {
-
-
-	// 	}
-	// }
+	removeAll(item) {
+		let node = this.head;
+		while(node) {
+			if(node.value === item){
+				let prevNode = node.prev;
+				let nextNode = node.next;
+				nextNode.prev = prevNode;
+				prevNode.next = nextNode;
+			}
+			node = node.next;
+		}
+	}
 	removeAt(index) {
 		let node = this.head;
 		let prevNode = null;
@@ -85,10 +89,16 @@ let list = new LinkedList();
 list.unshift(1);
 list.unshift(2);
 list.unshift(3);
+list.unshift(3);
 list.unshift(4);
 list.unshift(5);
+list.unshift(3);
 list.unshift(6);
 
+list.print();
+list.reversePrint();
+list.removeAll(3);
+console.log('');
 list.print();
 list.reversePrint();
 
@@ -134,6 +144,6 @@ countWithArray(bigA);
 console.log('');
 console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 console.log("THE FOLLOWING IS countWithMap() ...");
-countWithMap(bigA);
+//countWithMap(bigA);
 
 
